@@ -1,12 +1,12 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+
 from django.contrib.auth.models  import User
 from django.db.models.deletion import CASCADE
 # Create your models here.
 class Proyecto(models.Model):
     title = models.CharField(max_length=200,verbose_name="Titulo ")
     subtitle = models.CharField(max_length=200,verbose_name="Subtitulo")
-    content = RichTextField(verbose_name = "Contenido")
+    content = models.CharField(max_length=200,verbose_name = "Contenido")
     image = models.ImageField(verbose_name ="Imagen", upload_to = "Projects")
     created= models.DateTimeField(auto_now_add= True, verbose_name= "Creado")
     updated = models.DateTimeField(auto_now=True, verbose_name ="Editado")
