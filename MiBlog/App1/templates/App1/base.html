@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ignacio Vidondo</title>
+	<link rel="stylesheet" href="{% static 'App1/css/bootstrap.min.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'App1/css/fontello.css' %}">
+	<link rel="stylesheet" href="{% static 'App1/css/styles.css' %}">
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+		
+			<!-- Logo Nombre y Menu -->
+			<div class="nav row rounded-top align-items-stretch justify-content-between">
+				<!-- Nombre de usuario -->
+				<div
+					class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+					<a class="nombre" href="{% url 'about' %}">Ignacio Vidondo</a>
+					<samp class="icono icon-dot"></samp>
+					<p>Web Developer</p>
+				</div>
+				<!-- Menu de navegación -->
+				<nav class="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap">
+					<a href="{% url 'proyectos' %}" class="c-1 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Proyectos </span>
+							<i class="icono icon-briefcase"></i>
+						</div>
+					</a>
+					<a href="{% url 'about' %}"class="c-2 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Acerca mio</span>
+							<i class="icono icon-user"></i>
+						</div>
+					</a>
+					<a href="{% url 'contacto' %}" class="c-3 d-flex align-items-center">
+						<div class="d-flex flex-column text-center">
+							<span>Contacto</span>
+							<i class="icono icon-mail"></i>
+						</div>
+					</a>
+				</nav>
+			</div>
+
+			<!--Slider -->
+			<div class="row slider">
+				<div class="col">
+					<div class="carousel slide" id="slider" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider" data-slide-to="0" class="active"></li>
+							<li data-target="#slider" data-slide-to="1"></li>
+							<li data-target="#slider" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="{% static 'App1/img/foto3.jpg' %}" class="d-block w-100" alt="Slide#1">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'App1/img/foto10.jpeg' %}" class="d-block w-100" alt="Slide#1">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'App1/img/sur2.jpeg' %}" class="d-block w-100" alt="Slide#1">
+							</div>
+						</div>
+
+						<a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Anterior</span>
+						</a>
+						<a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Siguiente</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+{% block content %}
+	
+    {% endblock %}
+	<!--Piede pagina -->
+	<footer>
+		<div class="container">
+			<div class="row redes-sociales justify-content-center">
+				<div class="col-auto">
+					<a href="https://www.facebook.com/ignacio.vidondo" class="icono icon-facebook facebook"></a>
+			
+					<a href="https://www.instagram.com/ignaciovidondo/?hl=es-la" class="icono icon-instagram instagram"></a>
+				</div>
+				<div class="col-12 text-center copyright">
+					<samp>
+						<p>Copyright &copy; 2021 ·Ignacio Vidondo (Backend - Web Developer) </p>
+					</samp>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+	<script src="{% static 'App1/js/jquery-3.4.1.min.js' %}"></script>
+	<script src="{% static 'App1/js/popper.min.js' %}"></script>
+	<script src="{% static 'App1/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'App1/js/scripts.js' %}"></script>
+</body>
+
+</html>

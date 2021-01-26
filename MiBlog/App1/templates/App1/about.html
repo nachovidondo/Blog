@@ -1,0 +1,100 @@
+{% extends 'App1/base.html' %}
+{% load static %}
+{% block content %}
+{% for blog in blogs %}
+	<!--Contenido-->
+	<main>
+		<!--Acerca de - contenido -->
+		<div class="container">
+			<div class="row contenedor">
+				<div class="col">
+					<h2 class="titulo">{{ blog.name }}</h2>
+					<div class="row projects justify-content-center">
+						<div class="col-12 col-lg-3 col-md-3">
+							<img src="{{ blog.image.url }}" class="rounded-circle w-100" alt="...">
+							<hr>
+							<p class="text-center">{{ blog.name }}</p>
+							<hr>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+						
+							<br>
+
+							<h5 class="title-project">{{ blog.content|safe }}</h5>
+						</div>
+					</div>
+
+					<h2 class="titulo">Professional Skills</h2>
+					<div class="row justify-content-center">
+						<div class="col-12 col-lg-3 col-md-3">
+							<p class="label text-center">Python 3.9 </p>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
+									aria-valuemin="0" aria-valuemax="100">75%</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-3 col-md-3">
+							<p class="label text-center">Django Framework </p>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
+									aria-valuemin="0" aria-valuemax="100">90%</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-3 col-md-3">
+							<p class="label text-center">HTML</p>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
+									aria-valuemin="0" aria-valuemax="100">85%</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-3 col-md-3">
+							<p class="label text-center">Tkinter GUI</p>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+									aria-valuemin="0" aria-valuemax="100">80%</div>
+							</div>
+
+		
+						</div>
+						<div class="col-12 col-lg-3 col-md-3">
+							<p class="label text-center">GIT / GITHUB</p>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
+									aria-valuemin="0" aria-valuemax="100">90%</div>
+							</div>
+							
+
+		
+						</div>
+						<div class="col-12 col-lg-3 col-md-3">
+							<p class="label text-center">English Language</p>
+						</div>
+						<div class="col-12 col-lg-9 col-md-9">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
+									aria-valuemin="0" aria-valuemax="100">85%</div>
+							</div>
+							
+
+		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	{% endfor %}
+{% endblock %}
