@@ -100,7 +100,7 @@ header .menu .c-3:hover {
 .contenedor {
     background: #fff;
     border-top: 5px solid #d4a31a;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .titulo {
@@ -137,7 +137,7 @@ header .menu .c-3:hover {
 }
 
 .contenedor .projects .content-project a {
-    background: #25d198;
+    background: #ffffff;
     display: inline-block;
 }
 

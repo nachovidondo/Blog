@@ -36,44 +36,32 @@
 			</div>
 		</div>
 	</header>
-
-            {% endblock %}
-					
-		</div>
-	</header>
-{% block content %}
-	<!--Contenido-->
-    
-    	<main>
-		<!--Portafolios contenido -->
+    {% endblock %}
+    {% block content %}
+<!--Portafolios contenido -->
 		<div class="container">
 			<div class="row contenedor">
 				<div class="col">
-					<h2 class="titulo">Portafolio de Ignacio </h2>
+					<h2 class="titulo">{{details.title}} </h2>
 					<div class="row projects justify-content-center">
-					{% for proyecto in proyectos %}
+					
 						<div class="content-project col-12 col-lg-4 col-md-4">
-							<a href="{% url 'detail' proyecto.id %}" >
-								<img src="{{proyecto.image.url}}" class="img-fluid" alt="...">
+							<a href="" data-toggle="modal" data-target="#modal">
+								<img src="{{details.image.url}}" class="img-fluid" alt="...">
 							</a>
 							
 						</div>
 
-						<div class="content-project col-12 col-lg-8 col-md-8"><a href="{% url 'detail' proyecto.id %}">
-							<h5 class="title-project">{{proyecto.title}}</a></h5>
-							<span >{{proyecto.subtitle}}</span>
-							<p>{{proyecto.content|safe}}</p>
+						<div class="content-project col-15 col-lg-8 col-md-8">
+							<h5 class="title-project">{{details.subtitle}}</h5>
+							
+							<p>{{details.content|safe}}</p>
 							
 							
 							
 							
 						</div>
-
-						
-						
-							
-                        {% endfor %}
-						<!-- Ventana Modal -->
+                        			<!-- Ventana Modal -->
 						<div class="modal fade" id="modal">
 							<div class="modal-dialog d-flex justify-content-center align-items-center">
 								<div class="modal-content">

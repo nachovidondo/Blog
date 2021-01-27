@@ -10,10 +10,12 @@ def contacto(request):
             name= request.POST.get('name')
             email= request.POST.get('email')
             content= request.POST.get('content')
+            
             mail = EmailMessage(
-                "Ignacio Vidondo : Nuevo Mensaje de Contacto ",
-                "De {} {}\n\nEscribio:\n\n {}".format(name,email,content),
-                "ignaciovidondoblog.com.ar", ["nacho_vidondo@hotmail.com"],
+                "Ignacio Vidondo Blog : Nuevo Mensaje de Contacto ",
+                "De {} {}\n\nEscribio:\n\n {}".format(name ,email,content),
+                "ignaciovidondo.pythonanywhere.com", ["ignaciovidondo@hotmail.com"],
+              
                 reply_to = [email]
                 )
             try:
