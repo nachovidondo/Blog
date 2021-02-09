@@ -1,89 +1,89 @@
+ {% extends 'App1/base.html'%} {% load static %}
+<!--Slider -->
+{% block slider %}
+<div class="row slider">
+    <div class="col">
+        <div class="carousel slide" id="slider" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#slider" data-slide-to="0" class="active"></li>
+                <li data-target="#slider" data-slide-to="1"></li>
+                <li data-target="#slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'App1/img/slide1.jpg' %}" class="d-block w-100" alt="Slide#1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'App1/img/slide2.jpg' %}" class="d-block w-100" alt="Slide#1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'App1/img/fotocv.jpg' %}" class="d-block w-100" alt="Slide#1">
+                </div>
+            </div>
 
-{% extends 'App1/base.html'%}
-{% load static %}
-			<!--Slider -->
-            {% block slider %}
-            <div class="row slider">
-				<div class="col">
-					<div class="carousel slide" id="slider" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#slider" data-slide-to="0" class="active"></li>
-							<li data-target="#slider" data-slide-to="1"></li>
-							<li data-target="#slider" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img src="{% static 'App1/img/slide1.jpg' %}" class="d-block w-100" alt="Slide#1">
-							</div>
-							<div class="carousel-item">
-								<img src="{% static 'App1/img/slide2.jpg' %}" class="d-block w-100" alt="Slide#1">
-							</div>
-							<div class="carousel-item">
-								<img src="{% static 'App1/img/fotocv.jpg' %}" class="d-block w-100" alt="Slide#1">
-							</div>
-						</div>
+            <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</header>
 
-						<a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Anterior</span>
-						</a>
-						<a class="carousel-control-next" href="#slider" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Siguiente</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+{% endblock %}
 
-            {% endblock %}
-					
-		</div>
-	</header>
+</div>
+</header>
 {% block content %}
-	<!--Contenido-->
-    
-    	<main>
-		<!--Portafolios contenido -->
-		<div class="container">
-			<div class="row contenedor">
-				<div class="col">
-					<h2 class="titulo">Portafolio de Ignacio </h2>
-					<div class="row projects justify-content-center">
-					{% for proyecto in proyectos %}
-						<div class="content-project col-12 col-lg-4 col-md-4">
-							<a href="{% url 'detail' proyecto.id %}" >
-								<img src="{{proyecto.image.url}}" class="img-fluid" alt="...">
-							</a>
-							
-						</div>
+<!--Contenido-->
 
-						<div class="content-project col-12 col-lg-8 col-md-8"><a href="{% url 'detail' proyecto.id %}">
-							<h5 class="title-project">{{proyecto.title}}</a></h5>
-							<span >{{proyecto.subtitle}}</span>
-							<p>{{proyecto.content|safe}}</p>
-							
-							
-							
-							
-						</div>
+<main>
+    <!--Portafolios contenido -->
+    <div class="container">
+        <div class="row contenedor">
+            <div class="col">
+                <h2 class="titulo">Portafolio de Ignacio </h2>
+                <div class="row projects justify-content-center">
+                    {% for proyecto in object_list %}
+                    <div class="content-project col-12 col-lg-4 col-md-4">
+                        <a href="{% url 'detail' proyecto.id %}">
+                            <img src="{{proyecto.image.url}}" class="img-fluid" alt="...">
+                        </a>
 
-						
-						
-							
-                        {% endfor %}
-						<!-- Ventana Modal -->
-						<div class="modal fade" id="modal">
-							<div class="modal-dialog d-flex justify-content-center align-items-center">
-								<div class="modal-content">
-									<img src="{% static 'App1/img/bg.jpg' %}" id="imagen-modal" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+                    </div>
+
+                    <div class="content-project col-12 col-lg-8 col-md-8">
+                        <a href="{% url 'detail' proyecto.id %}">
+                            <h5 class="title-project">{{proyecto.title}}</a>
+                        </h5>
+                        <span>{{proyecto.subtitle}}</span>
+                        <p>{{proyecto.content|safe}}</p>
+
+
+
+
+                    </div>
+
+
+
+
+                    {% endfor %}
+                    <!-- Ventana Modal -->
+                    <div class="modal fade" id="modal">
+                        <div class="modal-dialog d-flex justify-content-center align-items-center">
+                            <div class="modal-content">
+                                <img src="{% static 'App1/img/bg.jpg' %}" id="imagen-modal" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}

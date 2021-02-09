@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+from .views import proyectosList,detailProject
 
 urlpatterns = [
 
-    path('', views.proyectos, name = "proyectos"),
-    path('detail/<int:proyecto_id>',views.detail,name='detail')
+    path('', proyectosList.as_view(), name = "proyectos"),
+    path('detail/<int:pk>',detailProject.as_view(),name='detail')
     
     
     
