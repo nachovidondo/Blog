@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Blog
+from django.views import generic
 # Create your views here.
 
-
-def about(request):
-    blogs = Blog.objects.all()
-    return render (request,'App1/about.html',{'blogs' : blogs })
+class aboutListView(generic.ListView):
+    model = Blog
+    template_name = 'App1/about.html'

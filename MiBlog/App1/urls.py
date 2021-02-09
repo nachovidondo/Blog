@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import aboutListView
 
 urlpatterns = [
 
-    path('about/', views.about, name = "about"),
+    path('about/', aboutListView.as_view(), name = "about"),
     
     
     
